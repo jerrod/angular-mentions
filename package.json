@@ -1,7 +1,7 @@
 {
-  "name": "@jerrod/angular-mentions",
-  "version": "0.0.5",
-  "description": "Angular mentions for text fields.",
+  "name": "ngx-mentions-input",
+  "version": "0.0.1",
+  "description": "Angular mentions input.",
   "keywords": [
     "angular",
     "mention",
