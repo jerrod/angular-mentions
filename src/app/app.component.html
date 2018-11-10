@@ -10,15 +10,26 @@ and content editable fields. Try entering some @names below.</p>
 <h3>Textarea</h3>
 <textarea [mention]="items" class="form-control" cols="60" rows="4"></textarea>
 
-<h3>Content Editable</h3>
+<h3>Content Editable - Plain Text</h3>
 <div [mention]="items" class="form-control" contenteditable="true" style="border:1px lightgrey solid;min-height:88px"></div>
+
+ <h3>Content Editable - HTML Code Insertion</h3>
+ <div
+     [mention]="items"
+     [mentionConfig]="{
+         insertHTML: true,
+         mentionSelect: insertSpanText
+     }"
+     class="form-control"
+     contenteditable="true"
+     style="border:1px lightgrey solid;min-height:88px"></div>
 
 <h3>Embedded Editor</h3>
 <app-demo-tinymce></app-demo-tinymce>
 
 
 <app-demo-async></app-demo-async>
-<app-demo-options></app-demo-options> 
+<app-demo-options></app-demo-options>
 <app-demo-template></app-demo-template>
 
 <br><p style="color:grey">angular-mentions on <a href="https://github.com/dmacfarlane/angular-mentions">Github</a></p>

@@ -1,6 +1,6 @@
 {
-  "name": "@jnimbus/angular-mentions",
-  "version": "0.0.4",
+  "name": "@jerrod/angular-mentions",
+  "version": "0.0.5",
   "description": "Angular mentions for text fields.",
   "keywords": [
     "angular",
@@ -10,7 +10,7 @@
   "main": "src/mention/index.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JobNimbus/angular-mentions.git"
+    "url": "https://github.com/jerrod/angular-mentions.git"
   },
   "author": "Michael Moffet",
   "license": "MIT",

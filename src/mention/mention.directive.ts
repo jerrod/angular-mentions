@@ -42,6 +42,7 @@ export class MentionDirective implements OnInit, OnChanges {
     this.disableSearch = config.disableSearch || this.disableSearch;
     this.maxItems = config.maxItems || this.maxItems;
     this._filterKeys = config.filterKeys || this._filterKeys;
+    this.insertHTML = config.insertHTML || this.insertHTML;
     this.mentionSelect = config.mentionSelect || this.mentionSelect;
     this._showListHeader = config.showListHeader || this._showListHeader;
     this._maxHeight = config.maxHeight || this._maxHeight;
@@ -126,6 +127,9 @@ export class MentionDirective implements OnInit, OnChanges {
    * Default height is 26px.
    */
   private _listItemHeight = 26;
+
+  //Insert Text (false) or HTML (true)
+  private insertHTML:boolean = false;
 
   // optional function to format the selected item before inserting the text
   private mentionSelect: (item: any) => (string) = (item: any) => this.triggerChar + item[this.labelKey];
@@ -265,6 +269,7 @@ export class MentionDirective implements OnInit, OnChanges {
             // value is inserted without a trailing space for consistency
             // between element types (div and iframe do not preserve the space)
             insertValue(nativeElement, this.startPos, pos,
+              this.insertHTML,
               this.mentionSelect(this.searchList.activeItem), this.iframe);
             this.searchString = null;
             this.searchList.searchString = null;
@@ -350,6 +355,7 @@ export class MentionDirective implements OnInit, OnChanges {
               // value is inserted without a trailing space for consistency
               // between element types (div and iframe do not preserve the space)
               insertValue(nativeElement, editStartPos - 1, pos,
+                this.insertHTML,
                 this.mentionSelect(this.searchList.activeItem), this.iframe);
               this.searchString = null;
               this.searchList.searchString = null;
